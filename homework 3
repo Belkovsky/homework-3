@@ -1,0 +1,94 @@
+Задача 19
+Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+
+void Palindrome(int pal)
+{
+    int rev = 0;
+    int pall = pal;
+
+    while (pall != 0)
+    {
+        rev = (rev * 10) + pall % 10;
+        pall = pall / 10;
+    }
+
+    if (rev == pal)
+    {
+        Console.WriteLine("число - палиндром");
+    }
+    else
+    {
+        Console.WriteLine("число не палиндром");
+    }
+}
+
+Console.Write("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+
+Palindrome(number);
+
+
+Задача 21
+Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+
+double Distance(double x1, double y1, double z1, double x2, double y2, double z2)
+{
+    double x = (x2 - x1)*(x2 - x1);
+    double y = (y2 - y1)*(y2 - y1);
+    double z = (z2 - z1)*(z2 - z1);
+
+    double distance = Math.Sqrt(x+y+z);
+    return distance;
+}
+Console.Write("Введите значение AХ: ");
+double ax = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("Введите значение координаты AY: ");
+double ay = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("Введите значение координаты AZ: ");
+double az = Convert.ToDouble(Console.ReadLine());
+
+Console.Write.Line("Введите значение координаты BХ: ");
+double bx = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("Введите значение координаты BY: ");
+double by = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("Введите значение координаты BZ: ");
+double bz = Convert.ToDouble(Console.ReadLine());
+
+double result = Distance(ax, ay, az, bx, by, bz);
+
+Console.Write("Расcтояние между точками A и B составляет " + result);
+
+Задача 23
+Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+
+void Cube(int N)
+{
+    int i;
+    int j;
+    if (N < 0)
+    {
+        for (i = 1; i >= N; i--)
+        {
+            int sum = i * i * i;
+            Console.Write(sum + " ");
+        }
+    }
+    else
+    {
+        for (j = 1; j <= N; j++)
+        {
+            int sum1 = j * j * j;
+            Console.Write(sum1 + " ");
+        }
+    }
+}
+
+Console.Write("Введите число: ");
+int num = Convert.ToInt32(Console.ReadLine());
+Console.Write("Таблица кубов чисел от 1 до " + num + ": ");
+
+Cube(n);
