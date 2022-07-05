@@ -89,6 +89,6 @@ void Cube(int N)
 
 Console.Write("Введите число: ");
 int num = Convert.ToInt32(Console.ReadLine());
-Console.Write("Таблица кубов чисел от 1 до " + num + ": ");
+Console.Write("Таблица кубов от 1 до " + num + ": ");
 
-Cube(n);
+Cube(num);
